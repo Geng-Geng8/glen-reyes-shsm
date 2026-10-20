@@ -38,14 +38,13 @@ product imagery has been invented and existing placeholders remain unchanged.
 - [Filipino Central](https://photos.app.goo.gl/2E64CNzQbGycJXrr7)
 - [Battle at the Board](https://photos.app.goo.gl/TNoE3oCP5nciw2fq7)
 
-## Publication status: confirmation still needed
+## Publication approval and rights records
 
-This is an unpublished local review branch. Glen supplied the folders and selected
-the creative direction, but access to a shared folder does not establish image
-licensing or participant consent. No release records or photographer licenses
-were supplied or verified. **All nine photographs require Glen's confirmation of
-website publication rights before merge/deployment**, particularly the identifiable
-children in workshop, DJ, sports and event photographs. The cultural performer's
+Glen supplied the folders, reviewed the selected images and authorized deployment
+on 2026-10-20. Access to a shared folder does not establish image licensing or
+participant consent; no release records or photographer licenses were supplied
+or independently verified, including for identifiable children in workshop, DJ,
+sports and event photographs. The cultural performer's
 identity and age were not verified; the caption does not identify them. Exact camp
 date/location and Glen's role in the outdoor or marketing photographs are not
 established, so their captions remain descriptive.

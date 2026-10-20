@@ -5,7 +5,7 @@ A one-page marketing website for Glen Reyes Education: hands-on SHSM certificati
 **Review branch:** `codex/workshop-photography` (based on current `origin/main`)
 **Repository:** `Geng-Geng8/glen-reyes-shsm`
 **Pages URL:** <https://geng-geng8.github.io/glen-reyes-shsm/>
-**Status:** photography update prepared for local review. This update has not been pushed, merged or deployed.
+**Status:** visual storytelling update approved for GitHub Pages deployment on 2026-10-20. Local verification is documented in `QA.md`.
 
 ## Preview
 
