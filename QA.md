@@ -1,6 +1,6 @@
 # Review verification
 
-Tested locally in headless Microsoft Edge 155 (Chromium), using the dependency-free preview server and the real `/glen-reyes-shsm/` path. The visual-storytelling update passes 75 browser checks. Screenshots and temporary machine-readable results are under ignored `tmp/qa/`.
+Tested locally in headless Microsoft Edge 155 (Chromium), using the dependency-free preview server and the real `/glen-reyes-shsm/` path. The visual-storytelling and branding update passes 77 browser checks. Screenshots and temporary machine-readable results are under ignored `tmp/qa/`.
 
 ## Automated browser coverage
 
@@ -14,8 +14,15 @@ Tested locally in headless Microsoft Edge 155 (Chromium), using the dependency-f
 - JavaScript-disabled reading, navigation, and mobile overflow.
 - Optional axe-core 4.10.3 WCAG A/AA rules (through WCAG 2.2); automated findings are fixed before completion. This is not a full manual accessibility certification.
 - JavaScript syntax and Git whitespace checks.
+- Supplied GR mark loads in the header, footer and nameplate; the SHSM logo loads and links to Ontario's program information. Brand marks are tested separately from responsive workshop photography.
 
 ## Visual review
+
+Branding update: reviewed header and SHSM mark screenshots at 375, 390, 430, 768
+and 1440 px, plus the footer and Meet Glen nameplate. The supplied GR shape is
+preserved in cyan with no white box; the SHSM artwork retains its colours and
+proportions. No horizontal overflow was found. The favicon responds successfully.
+Captures are `tmp/qa/brand-*.png`.
 
 Reviewed 45 photo compositions: all nine source photographs at 375, 390, 430, 768 and 1440 pixels. The review covers the hero, certification and ICE cards, Summer Battle DJ image, all four photographed sector states, and hosting image. Screenshots and rendered-image metrics are in `tmp/qa/story/`. All states load and have no horizontal overflow. Faces, the raised hand/microphone, DJ equipment and breaking movement remain visible. The singer receives a taller mobile crop; the hero, learning photos, DJ portrait and wide hosting scene preserve their compositions. Captions sit outside images.
 

@@ -2,10 +2,10 @@
 
 A one-page marketing website for Glen Reyes Education: hands-on SHSM certifications, custom bundles, ICE experiences, and Vibe Coding for Ontario schools.
 
-**Review branch:** `codex/workshop-photography` (based on current `origin/main`)
+**Review branch:** `codex/logo-integration` (based on deployed `origin/main`)
 **Repository:** `Geng-Geng8/glen-reyes-shsm`
 **Pages URL:** <https://geng-geng8.github.io/glen-reyes-shsm/>
-**Status:** visual storytelling update approved for GitHub Pages deployment on 2026-10-20. Local verification is documented in `QA.md`.
+**Status:** logo update approved for GitHub Pages deployment on 2026-10-20. Local verification is documented in `QA.md`.
 
 ## Preview
 
@@ -29,6 +29,7 @@ You can also open `index.html` directly. There is no mandatory build, package in
 | `config.js` | Public form endpoint, app URL, and screenshot paths |
 | `assets/` | Optimized workshop photo, favicon, social card, fonts, and font licenses |
 | `assets/photos/` | Nine authentic workshop/community/event photographs, responsive WebP variants, source captions and publication-status notes |
+| `assets/brand/` | Supplied GR logo in site colours and original-colour SHSM program mark |
 | `tools/preview.mjs` | Optional dependency-free local preview server |
 | `tools/qa.mjs` | Optional automated browser checks; not loaded by the website |
 | `QA.md` | Verification scope, results, and remaining checks |
@@ -76,7 +77,7 @@ Set `goalQuestUrl` to the verified HTTPS public app address. This changes the CT
 - Supplied workshop, leadership, youth arts, cultural and event folders: nine selected photographs now support the hero, offerings, Show & Prove, sectors and Meet Glen. Source filenames, captions, crop notes and unverified publication permissions are documented in [the photo register](assets/photos/README.md). Original photos remain unchanged. The hero uses authentic workshop photography.
 - [Ontario SHSM overview](https://www.ontario.ca/page/specialist-high-skills-major), [Non-Profit, Education and Child Care guide](https://www.ontario.ca/document/specialist-high-skills-major-shsm-policy-and-implementation-guide/non-profit-education-and), and [Ontario SPE guidance](https://www.ontario.ca/document/specialist-high-skills-major-shsm-policy-and-implementation-guide/sector-partnered). Direct fetches of the first two pages returned 403; indexed official material and the official SPE page were accessible. The copy distinguishes certifications, ICE, and coding. SPEs are described as approximately six hours, co-designed and co-delivered with teachers, with final student self-assessment. Recognition and sector requirements are confirmed with the school.
 - Space Grotesk and Inter: self-hosted Latin WOFF2 subsets from Google Fonts, with SIL Open Font License files in `assets/fonts/`.
-- Favicon, project artifacts, and social card: made for this site. No app interface is fabricated.
+- GR logo and favicon: adapted from Glen's supplied `GR Logo 3.png`, preserving its design in the site's cyan. The supplied `Colour_SHSM.jpg` retains its original colours beside a link to Ontario's program information. See `assets/brand/README.md`. Project artifacts and social card were made for this site. No app interface is fabricated.
 
 ## Review and eventual GitHub Pages deployment
 
