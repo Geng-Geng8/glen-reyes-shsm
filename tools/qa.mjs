@@ -32,15 +32,17 @@ try {
   }
   await page.setViewportSize({ width: 1440, height: 1050 });
   check('Desktop hides the mobile menu button', !await page.locator('.menu-toggle').isVisible());
-  await page.locator('#glen img').scrollIntoViewIfNeeded();
-  await page.waitForFunction(() => { const img = document.querySelector('#glen img'); return img.complete && img.naturalWidth > 0; });
-  check('Facilitator portrait loads', await page.locator('#glen img').evaluate((img) => img.naturalWidth > 0));
+  await page.locator('#glen .hosting-photo img').scrollIntoViewIfNeeded();
+  await page.waitForFunction(() => { const img = document.querySelector('#glen .hosting-photo img'); return img.complete && img.naturalWidth > 0; });
+  check('Facilitator photograph loads', await page.locator('#glen .hosting-photo img').evaluate((img) => img.naturalWidth > 0));
   for (const photo of await page.locator('main img').all()) {
     await photo.scrollIntoViewIfNeeded();
     await photo.evaluate((img) => img.decode());
   }
-  check('All six visible storytelling photos load with responsive sources', await page.locator('main img').evaluateAll((images) => images.length === 6 && images.every((img) => img.naturalWidth > 0 && img.srcset && img.width > 0 && img.height > 0)));
-  check('Hero photo is prioritized and supporting photos load lazily', await page.locator('main img').evaluateAll((images) => images[0].fetchPriority === 'high' && images.slice(1).every((img) => img.loading === 'lazy')));
+  check('All six visible storytelling photos load with responsive sources', await page.locator('main figure img').evaluateAll((images) => images.length === 6 && images.every((img) => img.naturalWidth > 0 && img.srcset && img.width > 0 && img.height > 0)));
+  check('Hero photo is prioritized and supporting photos load lazily', await page.locator('main figure img').evaluateAll((images) => images[0].fetchPriority === 'high' && images.slice(1).every((img) => img.loading === 'lazy')));
+  check('Supplied GR mark loads in header, nameplate and footer', await page.locator('.brand-logo,.glen-logo').evaluateAll(images => images.length === 3 && images.every(img => img.complete && img.naturalWidth > 0 && img.src.includes('gr-mark.svg'))));
+  check('SHSM program logo loads and links to Ontario program information', await page.locator('.shsm-program-mark img').evaluate(img => img.naturalWidth > 0 && img.alt.includes('Specialist High Skills Major')) && (await page.locator('.shsm-program-mark').getAttribute('href')) === 'https://www.ontario.ca/page/specialist-high-skills-major');
   await page.locator('#glen').screenshot({ path: 'tmp/qa/meet-glen.png' });
   await page.locator('#home').scrollIntoViewIfNeeded();
   await page.screenshot({ path: 'tmp/qa/desktop-full.png', fullPage: true });
