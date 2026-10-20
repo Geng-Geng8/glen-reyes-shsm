@@ -9,8 +9,8 @@ are no new page sections, galleries, carousels, runtime dependencies or videos.
 | Asset prefix | Original source filename | Placement | Visible caption |
 | --- | --- | --- | --- |
 | `workshop-collaboration` | `IMG_3289.HEIC` · Dec 2 SHSM Certifications | Hero | Students collaborating during a SHSM workshop. |
-| `workshop-engagement` | `IMG_9425.JPG` · SHSM Pics and Videos | Certification offering | Students taking part in a facilitated workshop. |
-| `workshop-community` | `IMG_3314.HEIC` · Dec 2 SHSM Certifications | ICE offering | Workshop participants gathered for a group photo. |
+| `student-presentations` | `YorkBoard-SHSM-20250307_141554.jpg` · supplied local original | Certification offering | Students presenting their ideas to classmates. |
+| `workshop-engagement` | `IMG_9425.JPG` · SHSM Pics and Videos | ICE offering | Glen facilitating a workshop with students standing together. |
 | `youth-dj` | `DSC00161.JPG` · Summer Battle · review ID SB0021 | Show & Prove, beside the real-practice note | Exploring DJ equipment at Summer Battle. |
 | `outdoor-teamwork` | `Trust Walk - Blind Leading Exercise.jpg` · Leadership folder | Non-Profit, Education and Child Care sector | An outdoor trust walk: moving together as a team. |
 | `youth-breaking` | `DSC_2458.jpeg` · Youth breaking folder | Sports sector | A young breaker demonstrating a floor move as peers watch. |
@@ -61,7 +61,11 @@ established, so their captions remain descriptive.
 - Maximum new image size is approximately 195 KiB. The browser selects an
   appropriate width through `srcset`/`sizes`. The hero has high fetch priority;
   below-fold images load lazily, with explicit source dimensions.
-- The hero and two learning photos retain their full 4:3 composition. The DJ
+- The hero and ICE activity retain their full 4:3 composition. The certification
+  photograph uses a deliberate 4:3 crop from the 4000 × 3000 original: pixel box
+  (1370, 830)–(2970, 2030). It removes excess ceiling and foreground to emphasize
+  the student presenters, projected slide and seated audience. The same framing
+  is preserved across mobile and desktop. The DJ
   image retains its complete 2:3 portrait at a restrained display width. Hosting
   preserves its complete wide composition so Glen and the seated youth remain.
 - Outdoor and production photos use wide crops; the breaking image stays close
@@ -69,7 +73,7 @@ established, so their captions remain descriptive.
   at 38% vertically, with a taller 4:3 crop at 650 px and below.
 - Captions sit outside photographs. No text covers faces or the activity.
 
-The `IMG_3314.HEIC` group image replaces the similar table activity in the ICE
-card. The old `IMG_3295.HEIC` table photo and `IMG_3303.HEIC` workshop portrait
-are retired from the page. The engagement photograph appears only in the
-certification offering. The group photograph preserves its full 4:3 composition.
+The latest offering-card update puts the supplied York Board presentation photo
+in Certifications & Training and moves `IMG_9425.JPG` (Glen in a hat, with standing
+students) into ICE. The `IMG_3314.HEIC` group image, `IMG_3295.HEIC` table photo and
+`IMG_3303.HEIC` workshop portrait are retired from the page.

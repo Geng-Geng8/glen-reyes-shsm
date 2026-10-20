@@ -27,6 +27,13 @@ photograph (`IMG_3314.HEIC`). Verified loading and no horizontal overflow at 375
 details link and inquiry preselection still work. Follow-up screenshots are
 `tmp/qa/ice-group-*.png`.
 
+Latest offering update: Certifications now uses a tight crop of
+`YorkBoard-SHSM-20250307_141554.jpg`, focused on the presenters and projected slide.
+ICE now uses `IMG_9425.JPG` (Glen in a hat with students standing). Both photos load
+without overflow at 375, 390, 430, 768 and 1440 px, and both offering links still
+prefill the inquiry correctly. Reviewed desktop/mobile captures in
+`tmp/qa/certification-updated-*.png` and `tmp/qa/ice-updated-*.png`.
+
 ## Not verified
 
 - Live form delivery: no endpoint/account is configured. Real delivery needs an approved test after account setup.
