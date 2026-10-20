@@ -18,6 +18,17 @@ Tested locally in headless Microsoft Edge 155 (Chromium), using the dependency-f
 
 ## Visual review
 
+Vibe Coding card update: the supplied app showcase sits directly below the
+headline, followed by the exact requested caption and unchanged existing content.
+Card 3 alone uses a 16:9 cover image; shared styles supply image radius and caption
+typography. Its icon now inherits the shared icon sizing so all three images start
+at the same relative vertical position. Verified image placement, caption styles,
+loading and no overflow at 375, 390, 430, 768 and 1440 px. Compared against the
+pre-change page: Cards 1 and 2 retain identical markup and rendered dimensions;
+all markup outside Card 3 and all pre-existing Card 3 wording remain unchanged.
+The Vibe Coding details/inquiry link still works. Screenshots and focused results
+are in `tmp/qa/coding-*.png` and `tmp/qa/coding-card-results.json`.
+
 Branding update: reviewed header and SHSM mark screenshots at 375, 390, 430, 768
 and 1440 px, plus the footer and Meet Glen nameplate. The supplied GR shape is
 preserved in cyan with no white box; the SHSM artwork retains its colours and

@@ -39,7 +39,7 @@ try {
     await photo.scrollIntoViewIfNeeded();
     await photo.evaluate((img) => img.decode());
   }
-  check('All six visible storytelling photos load with responsive sources', await page.locator('main figure img').evaluateAll((images) => images.length === 6 && images.every((img) => img.naturalWidth > 0 && img.srcset && img.width > 0 && img.height > 0)));
+  check('All seven storytelling and offering images load with responsive sources', await page.locator('main figure img').evaluateAll((images) => images.length === 7 && images.every((img) => img.naturalWidth > 0 && img.srcset && img.width > 0 && img.height > 0)));
   check('Hero photo is prioritized and supporting photos load lazily', await page.locator('main figure img').evaluateAll((images) => images[0].fetchPriority === 'high' && images.slice(1).every((img) => img.loading === 'lazy')));
   check('Supplied GR mark loads in header, nameplate and footer', await page.locator('.brand-logo,.glen-logo').evaluateAll(images => images.length === 3 && images.every(img => img.complete && img.naturalWidth > 0 && img.src.includes('gr-mark.svg'))));
   check('SHSM program logo loads and links to Ontario program information', await page.locator('.shsm-program-mark img').evaluate(img => img.naturalWidth > 0 && img.alt.includes('Specialist High Skills Major')) && (await page.locator('.shsm-program-mark').getAttribute('href')) === 'https://www.ontario.ca/page/specialist-high-skills-major');

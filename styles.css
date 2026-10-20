@@ -416,7 +416,6 @@ nav>a:hover {
 }
 .coding-card .experience-icon {
   color:#5f55a2;
-  font-size:29px;
 }
 .experience-card:hover .experience-icon {
   transform:rotate(-12deg);
@@ -2963,6 +2962,10 @@ summary::-webkit-details-marker {
   aspect-ratio:4/3;
   object-position:50% 50%;
   border-radius:12px;
+}
+.coding-card .offering-photo img {
+  aspect-ratio:16/9;
+  object-fit:cover;
 }
 .offering-photo figcaption {
   font-size:12px;
