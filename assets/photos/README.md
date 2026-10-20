@@ -10,7 +10,7 @@ are no new page sections, galleries, carousels, runtime dependencies or videos.
 | --- | --- | --- | --- |
 | `workshop-collaboration` | `IMG_3289.HEIC` · Dec 2 SHSM Certifications | Hero | Students collaborating during a SHSM workshop. |
 | `workshop-engagement` | `IMG_9425.JPG` · SHSM Pics and Videos | Certification offering | Students taking part in a facilitated workshop. |
-| `workshop-teamwork` | `IMG_3295.HEIC` · Dec 2 SHSM Certifications | ICE offering | Collaborative planning during a SHSM workshop. |
+| `workshop-community` | `IMG_3314.HEIC` · Dec 2 SHSM Certifications | ICE offering | Workshop participants gathered for a group photo. |
 | `youth-dj` | `DSC00161.JPG` · Summer Battle · review ID SB0021 | Show & Prove, beside the real-practice note | Exploring DJ equipment at Summer Battle. |
 | `outdoor-teamwork` | `Trust Walk - Blind Leading Exercise.jpg` · Leadership folder | Non-Profit, Education and Child Care sector | An outdoor trust walk: moving together as a team. |
 | `youth-breaking` | `DSC_2458.jpeg` · Youth breaking folder | Sports sector | A young breaker demonstrating a floor move as peers watch. |
@@ -69,6 +69,7 @@ established, so their captions remain descriptive.
   at 38% vertically, with a taller 4:3 crop at 650 px and below.
 - Captions sit outside photographs. No text covers faces or the activity.
 
-The old `IMG_3314.HEIC` group image and `IMG_3303.HEIC` workshop portrait are retired
-from the page to reduce repeated school settings. The engagement/teamwork photos
-were moved into the offerings instead of repeated elsewhere.
+The `IMG_3314.HEIC` group image replaces the similar table activity in the ICE
+card. The old `IMG_3295.HEIC` table photo and `IMG_3303.HEIC` workshop portrait
+are retired from the page. The engagement photograph appears only in the
+certification offering. The group photograph preserves its full 4:3 composition.

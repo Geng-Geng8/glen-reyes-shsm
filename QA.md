@@ -21,6 +21,12 @@ Reviewed 45 photo compositions: all nine source photographs at 375, 390, 430, 76
 
 Also reviewed the desktop hero, offering cards, Show & Prove integration and Meet Glen layout, plus mobile cards and Meet Glen. Nine sources have optimized, self-hosted WebP variants, with six photos visible in the default state. Fonts and images are local; no third-party runtime requests are needed in default email mode. Goal Quest imagery stays visibly marked as pending. No new main sections, galleries, autoplay media or runtime dependencies were introduced.
 
+ICE image follow-up: replaced the repeated table activity with the full-group
+photograph (`IMG_3314.HEIC`). Verified loading and no horizontal overflow at 375,
+390, 430, 768 and 1440 px; reviewed mobile/desktop crops and confirmed that the ICE
+details link and inquiry preselection still work. Follow-up screenshots are
+`tmp/qa/ice-group-*.png`.
+
 ## Not verified
 
 - Live form delivery: no endpoint/account is configured. Real delivery needs an approved test after account setup.
