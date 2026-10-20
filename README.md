@@ -5,7 +5,7 @@ A one-page marketing website for Glen Reyes Education: hands-on SHSM certificati
 **Review branch:** `codex/logo-integration` (based on deployed `origin/main`)
 **Repository:** `Geng-Geng8/glen-reyes-shsm`
 **Pages URL:** <https://geng-geng8.github.io/glen-reyes-shsm/>
-**Status:** logo update prepared for local review; not yet published. The preceding visual storytelling update was deployed on 2026-10-20. Local verification is documented in `QA.md`.
+**Status:** logo update approved for GitHub Pages deployment on 2026-10-20. Local verification is documented in `QA.md`.
 
 ## Preview
 
