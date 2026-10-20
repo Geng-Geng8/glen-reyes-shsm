@@ -20,12 +20,12 @@ try {
   await page.evaluate(() => document.fonts.ready);
   check('Correct page title', (await page.title()).includes('Glen Reyes SHSM'));
   check('Local fonts loaded', await page.evaluate(() => document.fonts.check('700 24px "Space Grotesk"') && document.fonts.check('400 16px "Inter"')));
-  check('One H1 and nine ordered main sections', await page.locator('h1').count() === 1 && await page.locator('main>section').count() === 9);
+  check('One H1 and ten existing main sections', await page.locator('h1').count() === 1 && await page.locator('main>section').count() === 10);
   check('Every fragment link has a target', await page.evaluate(() => [...document.querySelectorAll('a[href^="#"]')].every((a) => document.getElementById(a.hash.slice(1)))));
   check('No duplicate IDs', await page.evaluate(() => {const ids=[...document.querySelectorAll('[id]')].map((el)=>el.id);return ids.length===new Set(ids).size;}));
   check('All form inputs have labels', await page.evaluate(() => [...document.querySelectorAll('input,select,textarea')].every((el) => el.labels.length > 0)));
   await page.screenshot({ path: 'tmp/qa/desktop-hero.png' });
-  for (const width of [1440, 1024, 900, 768, 650, 390, 320]) {
+  for (const width of [1440, 1024, 900, 768, 650, 430, 390, 375, 320]) {
     await page.setViewportSize({ width, height: 900 });
     check(`No horizontal overflow at ${width}px`, await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
     if (width === 390) await page.screenshot({ path: 'tmp/qa/mobile-hero.png' });
@@ -34,14 +34,29 @@ try {
   check('Desktop hides the mobile menu button', !await page.locator('.menu-toggle').isVisible());
   await page.locator('#glen img').scrollIntoViewIfNeeded();
   await page.waitForFunction(() => { const img = document.querySelector('#glen img'); return img.complete && img.naturalWidth > 0; });
-  check('Authentic workshop photo loads', await page.locator('#glen img').evaluate((img) => img.naturalWidth === 1200));
+  check('Facilitator portrait loads', await page.locator('#glen img').evaluate((img) => img.naturalWidth > 0));
+  for (const photo of await page.locator('main img').all()) {
+    await photo.scrollIntoViewIfNeeded();
+    await photo.evaluate((img) => img.decode());
+  }
+  check('All six visible storytelling photos load with responsive sources', await page.locator('main img').evaluateAll((images) => images.length === 6 && images.every((img) => img.naturalWidth > 0 && img.srcset && img.width > 0 && img.height > 0)));
+  check('Hero photo is prioritized and supporting photos load lazily', await page.locator('main img').evaluateAll((images) => images[0].fetchPriority === 'high' && images.slice(1).every((img) => img.loading === 'lazy')));
   await page.locator('#glen').screenshot({ path: 'tmp/qa/meet-glen.png' });
   await page.locator('#home').scrollIntoViewIfNeeded();
   await page.screenshot({ path: 'tmp/qa/desktop-full.png', fullPage: true });
+  const sectorPhotoSources = new Set();
   for (const sector of ['sports', 'arts', 'business', 'ict', 'nonprofit']) {
     await page.locator(`[data-sector="${sector}"]`).click();
     check(`Sector ${sector} updates and prefills inquiry`, await page.locator('#sector').inputValue() === sector && await page.locator(`[data-sector="${sector}"]`).getAttribute('aria-pressed') === 'true');
+    if (sector === 'ict') {
+      check('ICT links to the existing Goal Quest resource without unrelated photography', !await page.locator('#sector-photo').isVisible() && await page.locator('#sector-tool-note').isVisible());
+    } else {
+      await page.locator('#sector-photo img').evaluate((image) => image.decode());
+      check(`Sector ${sector} has a loaded photograph and factual caption`, await page.locator('#sector-photo img').evaluate((image) => image.naturalWidth > 0 && image.alt.length > 15) && (await page.locator('#sector-photo figcaption').innerText()).length > 15);
+      sectorPhotoSources.add(await page.locator('#sector-photo img').getAttribute('src'));
+    }
   }
+  check('Each photographed sector uses a different source', sectorPhotoSources.size === 4);
   await page.locator('[data-sector="ict"]').focus();
   await page.keyboard.press('Enter');
   check('Sector controls support keyboard activation', await page.locator('#sector').inputValue() === 'ict');
@@ -85,7 +100,7 @@ try {
   check('Email link includes encoded draft', (await page.locator('#open-email').getAttribute('href')).startsWith('mailto:glen%40h4ml.com?subject='));
   await page.locator('#school').fill('Updated School');
   check('Prepared draft stays in sync with edits', (await page.locator('#email-draft').inputValue()).includes('Updated School'));
-  check('Reduced motion disables animation', await page.locator('.proof-card').evaluate((el) => getComputedStyle(el).animationName === 'none'));
+  check('Reduced motion disables animation', await page.locator('.reveal').first().evaluate((el) => getComputedStyle(el).transitionDuration === '0s'));
   await page.setViewportSize({ width: 390, height: 844 });
   await page.locator('#inquiry-form').scrollIntoViewIfNeeded();
   await page.screenshot({ path: 'tmp/qa/mobile-inquiry.png' });

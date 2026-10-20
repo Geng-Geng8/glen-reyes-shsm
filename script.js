@@ -108,25 +108,29 @@
       kicker: 'GLEN’S STRONGEST SECTOR', symbol: '↗', title: 'Big ideas.\nCommunity impact.',
       description: 'Connect youth leadership and mentorship with the practical work of running community programs, coordinating volunteers, fundraising, and creating positive change.',
       example: 'Design a youth mentorship program: define its purpose, coordinate volunteers, plan a launch event, and explain how you’ll measure community impact.',
-      recommendations: ['Project Management: YOU', 'Leadership Skills', 'Event Coordination', 'ICE']
+      recommendations: ['Project Management: YOU', 'Leadership Skills', 'Event Coordination', 'ICE'],
+      photo: { name: 'outdoor-teamwork', height: 675, kind: 'wide', alt: 'Participants follow one another in a line during an outdoor trust activity', caption: 'An outdoor trust walk: moving together as a team.' }
     },
     sports: {
       kicker: 'CONNECTING SPORT WITH REAL OPERATIONS', symbol: '◎', title: 'More than a game.\nMake the event happen.',
       description: 'Draw on practical experience with Breaking Canada to explore sport event coordination, leadership, team operations, risk management, program design, and the participant experience.',
       example: 'Plan a school sport event: assign team roles, map the participant journey, identify safety and scheduling risks, and build a contingency plan.',
-      recommendations: ['Event Coordination', 'Project Management: YOU', 'Leadership Skills', 'Customer Service']
+      recommendations: ['Event Coordination', 'Project Management: YOU', 'Leadership Skills', 'Customer Service'],
+      photo: { name: 'youth-breaking', height: 927, kind: 'sport', alt: 'A young breaker balances close to the floor while peers watch', caption: 'A young breaker demonstrating a floor move as peers watch.' }
     },
     arts: {
       kicker: 'CREATIVE WORK. PRACTICAL SKILLS.', symbol: '✳', title: 'Your creativity.\nOut in the world.',
       description: 'Connect dance education and H4 programming experience with creative entrepreneurship, arts events, community projects, portfolio development, and the practical work behind a creative idea.',
       example: 'Develop a community arts showcase: pitch the concept, plan the production, and document your role in a portfolio case study.',
-      recommendations: ['Portfolio Development', 'Event Coordination', 'Leadership Skills', 'ICE']
+      recommendations: ['Portfolio Development', 'Event Coordination', 'Leadership Skills', 'ICE'],
+      photo: { name: 'cultural-performance', height: 2131, kind: 'portrait', alt: 'A singer performing with a microphone and an expressive raised hand', caption: 'Live music at Filipino Central.' }
     },
     business: {
       kicker: 'FROM AN IDEA TO A CUSTOMER EXPERIENCE', symbol: '↔', title: 'Think like a founder.\nWork like a team.',
       description: 'Bring customer service, project management, entrepreneurship, communication, personality inventory, and leadership into practical business challenges. Explore where AI-assisted tools can help.',
       example: 'Design a student pop-up business: understand a customer need, map the service experience, test your pitch, and create a realistic launch plan.',
-      recommendations: ['Customer Service', 'Project Management: YOU', 'Personality Inventory', 'ICE / Vibe Coding']
+      recommendations: ['Customer Service', 'Project Management: YOU', 'Personality Inventory', 'ICE / Vibe Coding'],
+      photo: { name: 'event-production', height: 800, kind: 'wide', alt: 'An outdoor event with a performance area, audience seating and production tents', caption: 'The performance area, audience and production setup at an outdoor event.' }
     },
     ict: {
       kicker: 'HUMAN IDEAS. DIGITAL POSSIBILITIES.', symbol: '</>', title: 'See a problem?\nPrototype a solution.',
@@ -144,6 +148,19 @@
     $('#sector-symbol').textContent = data.symbol;
     $('#sector-title').replaceChildren(...data.title.split('\n').flatMap((line, index) => index ? [document.createElement('br'), document.createTextNode(line)] : [document.createTextNode(line)]));
     $('#sector-description').textContent = data.description;
+    const sectorPhoto = $('#sector-photo');
+    sectorPhoto.hidden = !data.photo;
+    $('#sector-tool-note').hidden = !!data.photo;
+    if (data.photo) {
+      const image = sectorPhoto.querySelector('img');
+      sectorPhoto.dataset.kind = data.photo.kind;
+      image.alt = data.photo.alt;
+      image.width = 1200;
+      image.height = data.photo.height;
+      image.srcset = [480, 800, 1200].map((width) => `./assets/photos/${data.photo.name}-${width}.webp ${width}w`).join(', ');
+      image.src = `./assets/photos/${data.photo.name}-800.webp`;
+      sectorPhoto.querySelector('figcaption').textContent = data.photo.caption;
+    }
     $('#sector-example').textContent = data.example;
     $('#sector-recommendations').replaceChildren(...data.recommendations.map((text) => {
       const tag = document.createElement('span');

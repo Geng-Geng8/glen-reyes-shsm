@@ -2,10 +2,10 @@
 
 A one-page marketing website for Glen Reyes Education: hands-on SHSM certifications, custom bundles, ICE experiences, and Vibe Coding for Ontario schools.
 
-**Review branch:** `feature/shsm-landing-page-v1`
+**Review branch:** `codex/workshop-photography` (based on current `origin/main`)
 **Repository:** `Geng-Geng8/glen-reyes-shsm`
-**Future Pages URL:** <https://geng-geng8.github.io/glen-reyes-shsm/>
-**Status:** built for local review. No merge or production deployment has been performed.
+**Pages URL:** <https://geng-geng8.github.io/glen-reyes-shsm/>
+**Status:** photography update prepared for local review. This update has not been pushed, merged or deployed.
 
 ## Preview
 
@@ -23,11 +23,12 @@ You can also open `index.html` directly. There is no mandatory build, package in
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | All nine page sections, navigation, form, FAQ, and SEO metadata |
+| `index.html` | All ten existing page sections, navigation, form, FAQ, and SEO metadata |
 | `styles.css` | Responsive layout, local fonts, motion, and reduced-motion settings |
 | `script.js` | Workshop bundle, sector choices, project journey, app preview, and form handling |
 | `config.js` | Public form endpoint, app URL, and screenshot paths |
 | `assets/` | Optimized workshop photo, favicon, social card, fonts, and font licenses |
+| `assets/photos/` | Nine authentic workshop/community/event photographs, responsive WebP variants, source captions and publication-status notes |
 | `tools/preview.mjs` | Optional dependency-free local preview server |
 | `tools/qa.mjs` | Optional automated browser checks; not loaded by the website |
 | `QA.md` | Verification scope, results, and remaining checks |
@@ -51,7 +52,7 @@ Set `formEndpoint` back to `''` at any time to return to email-only inquiries. W
 
 ## Goal Quest assets still needed
 
-No real app screenshots, companion artwork, or verified public app URL were present in this repository or its SHSM reference folder. The five interactive preview panels are explicitly labeled **asset placeholders, not the app UI**. The hero's plan and portfolio are illustrative examples, not product screenshots or actual student results. The Goal Quest CTA currently opens an email to ask Glen for access.
+No real app screenshots, companion artwork, or verified public app URL were present in this repository or its SHSM reference folder. The five interactive preview panels are explicitly labeled **asset placeholders, not the app UI**. The hero now features authentic student collaboration. The Goal Quest CTA currently opens an email to ask Glen for access.
 
 Provide these exact screenshot files (WebP preferred; PNG also supported if the configuration matches):
 
@@ -65,13 +66,14 @@ assets/goal-quest/ai-coaching.webp
 
 Use screenshots with no student names, email addresses, or private records. Around 960px wide is enough; preserve the real aspect ratio and aim for less than 200KB per image. Add their relative paths to `goalQuestScreenshots.selection`, `.creation`, `.tracking`, `.companions`, and `.coaching` in `config.js`. The interface then renders actual images; unavailable images fall back to a labeled placeholder.
 
-Set `goalQuestUrl` to the verified HTTPS public app address. This changes the CTA to that address. The separate H4 Goal Quest repository was not opened or modified. A higher-resolution facilitator portrait can be added later; the current page uses an authentic workshop photo and a Glen Reyes nameplate.
+Set `goalQuestUrl` to the verified HTTPS public app address. This changes the CTA to that address. The separate H4 Goal Quest repository was not opened or modified. The facilitator section uses an authentic photograph of Glen hosting Battle at the Board, alongside the Glen Reyes nameplate.
 
 ## Content and asset sources
 
 - Supplied project brief: services, philosophy, priority sectors, business contact, and named digital projects. No testimonials, fixed prices, or guaranteed eligibility have been added.
 - Local `2025-SHSM Training Programs - H4 Community - Breaking Canada.pdf`: verified historical workshop topics, H4 school programming, and Glen's education and sport experience. Historical prices and dated title/achievement claims were not republished.
 - Local `SHSM at Madonna.jpg`: resized to `assets/workshop.webp` (1200 × 900). No stock or generated student/facilitator photo is used.
+- Supplied workshop, leadership, youth arts, cultural and event folders: nine selected photographs now support the hero, offerings, Show & Prove, sectors and Meet Glen. Source filenames, captions, crop notes and unverified publication permissions are documented in [the photo register](assets/photos/README.md). Original photos remain unchanged. The hero uses authentic workshop photography.
 - [Ontario SHSM overview](https://www.ontario.ca/page/specialist-high-skills-major), [Non-Profit, Education and Child Care guide](https://www.ontario.ca/document/specialist-high-skills-major-shsm-policy-and-implementation-guide/non-profit-education-and), and [Ontario SPE guidance](https://www.ontario.ca/document/specialist-high-skills-major-shsm-policy-and-implementation-guide/sector-partnered). Direct fetches of the first two pages returned 403; indexed official material and the official SPE page were accessible. The copy distinguishes certifications, ICE, and coding. SPEs are described as approximately six hours, co-designed and co-delivered with teachers, with final student self-assessment. Recognition and sector requirements are confirmed with the school.
 - Space Grotesk and Inter: self-hosted Latin WOFF2 subsets from Google Fonts, with SIL Open Font License files in `assets/fonts/`.
 - Favicon, project artifacts, and social card: made for this site. No app interface is fabricated.
